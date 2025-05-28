@@ -1,0 +1,17 @@
+you walk through the list of prices, and at every step, you ask two questions:
+
+is today’s price lower than the cheapest price i’ve seen so far?
+ → if yes, update the buy price.
+
+if i bought at that cheapest price, and sold today, would i make more profit than i’ve seen before?
+ → if yes, update the max profit.
+
+you’re not committing to a real buy or sell. you're just pretending at each step:
+"what if i had bought at the lowest price so far — would today be a great time to sell?"
+
+important mental rule
+you're not deciding when to buy/sell in real time.
+you’re simulating a buy at the cheapest price so far
+and testing if today would’ve been the best time to sell so far.
+no matter how weird the prices get, this keeps working.
+
