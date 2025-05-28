@@ -2,5 +2,5 @@ Intuition
 basically every time you see a 0, you are essentially replacing that zero with the closest number on the right, 01103 -> 113 00. this can be done by swapping. however, there are edge cases, such as 001. here, you need to adjust your snowball size, which helps you keep track of the leftmost zero so that you can swap with it. whenever you see a zero, update snowball size, if the number is not a 0 and the snowball size is greater than 0 (snowball size matters in cases like [1] because you will accidentally override the 1 in the num[i]= 0 step) then you swap the leftmost 0 and the current number. done!
 
 Space: 45.70 MB
-
+ 
 Time: 2ms
