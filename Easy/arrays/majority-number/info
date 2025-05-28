@@ -1,0 +1,5 @@
+intuition:
+The HashMap is used to count how many times each number appears in the array, which helps identify the majority element efficiently. max_num is initialized to nums[0] because it's guaranteed that a majority element exists, so starting with the first number as a candidate is valid. max_count is set to 1 since we've already seen nums[0] once at the start. In the for loop, each number is added to the map with its frequency updated using getOrDefault(n, 0) + 1. 
+If the current number’s count becomes greater than max_count, then max_num is updated to that number, and max_count is updated to reflect its new frequency. This way, the loop keeps track of the most frequent number seen so far.
+
+IMPORTANT: Remember to use .getOrDefault(nums[i], 0) + 1
