@@ -1,1 +1,7 @@
+## intuition:
+you’re going through a sorted array and want to keep only the unique elements. since it’s sorted, duplicates will be next to each other.
+you use a pointer called unique_holder to mark the spot where the next unique number should go. start from the second element and compare each number with the last unique one you saved.
+if it’s different, move the pointer forward and copy the new number there. at the end, everything from index 0 to unique_holder will be the unique part of the array. return unique_holder + 1 because that’s the length.
 
+0 ms
+45 MB
