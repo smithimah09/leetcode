@@ -1,1 +1,6 @@
+Basically, the key to solving this problem is looking at the pattern within the output array. so if your input is 1234567, and your k is 2, then notice how your output is 6712345. the first k elements are swapped. and everything after is in sorted order. there's no way to get 67 at the front of the list without reversing the entire list, which would now be 7654321. then, reverse 0 to k-1 indexes. this gets you 6754321. now, reverse k to length-1 index. you get 6712345.
 
+as for the reversing logic, notice how if youre reversing 12, or 123, you're swapping the outermost elements amongst each other. this is a simple swapping logic. this is also an inplace solution!
+
+0ms
+57.50 MB
