@@ -1,0 +1,16 @@
+intuition
+you want the product of everything except the current number, but can’t use division.
+so you build the answer in two passes.
+
+first pass (left to right):
+for each index, store the product of everything before it using a running curr.
+this gives you:
+[1, 1, 2, 6] for [1, 2, 3, 4]
+
+second pass (right to left):
+now go backward, track the product of everything after using curr again, and multiply it into the result.
+final answer becomes:
+[24, 12, 8, 6]
+
+no division, no extra space — just prefix * suffix in-place.
+done ✅
