@@ -1,0 +1,17 @@
+basically, every time the stock goes up from one day to the next, we want to grab that profit.
+you’re allowed to buy and sell as many times as you want — just not at the same time. so if price goes up, you "pretend" to buy the day before and sell today to take the profit.
+so you walk through the array, and each day you ask:
+
+“hey, is today’s price higher than yesterday’s?”
+if yes → grab that profit
+if no → just move on
+
+currentBuy = prices[i];
+why do we do this every time?
+
+it’s because we need to always track today’s price so we can check if tomorrow’s price goes up or not.
+
+we’re not actually "buying" again — we’re just updating the price we’re comparing the next day to.
+
+1ms
+45.67mb
