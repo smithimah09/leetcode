@@ -1,0 +1,63 @@
+
+You need to check if there exists any increasing triplet: a < b < c with indices i < j < k.
+
+You don't need to return the actual triplet, just whether it exists.
+
+The values don’t have to be next to each other — just in increasing order and in correct index order.
+
+Brute-force baseline
+A naive approach would check all combinations of three elements.
+
+That would take O(n³) time, which is too slow for input sizes up to 100,000.
+
+Look for a pattern
+You realize the problem can be solved by scanning the array once (O(n)) if you keep track of useful information.
+
+Specifically, you can look for a number that is:
+
+Greater than some earlier number (second value)
+
+And also greater than a number that was even earlier (first value)
+
+Greedy insight
+Track the smallest value seen so far → potential first number in triplet.
+
+Track the smallest number greater than that → potential second number in triplet.
+
+If you ever find a number greater than both, you've found a triplet.
+
+Why update smallest and second smallest?
+You want to make it easier to find the third number.
+
+A smaller first or second number increases your chances of finding a valid third number.
+
+So if you find a better candidate for either, you update it.
+
+Why use <= and not <?
+Using <= ensures you don't skip over repeated values that could still be part of a valid triplet.
+
+For example, in [2, 1, 1, 3], the second 1 still needs to update smallest.
+
+Not using <= might cause you to miss valid sequences.
+
+Summary of logic
+Start with smallest = ∞ and second_smallest = ∞.
+
+Loop through each number:
+
+If it's ≤ smallest, update smallest.
+
+Else if it's ≤ second_smallest, update second_smallest.
+
+Else, you've found a number greater than both → return true.
+
+If you reach the end of the array without finding such a number, return false.
+
+Generalize the idea
+In problems asking for increasing patterns (triplets, quadruplets, etc.), try to:
+
+Track the smallest values needed to build the pattern.
+
+Update them greedily when better values appear.
+
+Check if the current number completes the pattern.
