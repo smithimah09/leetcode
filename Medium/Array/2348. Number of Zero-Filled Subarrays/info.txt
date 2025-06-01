@@ -1,0 +1,31 @@
+intuition
+basically, you’re going through the array and every time you hit a 0, you ask:
+
+"how many subarrays ending at this position are filled with only zeroes?"
+
+if it’s just one 0, you count one.
+if you see two in a row (0, 0), you now have:
+
+[0] (the second one)
+
+[0, 0]
+
+plus the first [0] from before
+→ total of 3 so far
+
+so every time you see a zero, you increase a running count called consecutive.
+and you add that to your total sum, because it represents how many zero-only subarrays end at that spot.
+
+if you see a non-zero, reset consecutive to 0 because the zero streak is broken.
+
+key trick: use long
+since the array can be up to 100,000 elements long, and you might get long stretches of zeroes,
+adding up all the possible subarrays can get very big — way beyond what an int can hold.
+
+example:
+if you have 10,000 zeroes in a row, the number of subarrays is:
+1 + 2 + 3 + ... + 10,000 = 10,000 * 10,001 / 2 = 50,005,000
+which already blows past int’s safe limit if repeated or added to others.
+
+so use long to be safe from overflow and avoid wrong answers.
+
