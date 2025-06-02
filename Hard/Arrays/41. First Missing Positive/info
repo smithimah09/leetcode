@@ -1,0 +1,29 @@
+57.65 MB
+1 ms
+
+intution
+Since the array has length n, the missing number must be between 1 and n + 1.
+So the idea is to put each number in its correct index, where value x should be placed at index x - 1.
+
+After placing everything, you can scan the array.
+The first index i where nums[i] != i + 1 means i + 1 is missing.
+
+
+Why do we use a while loop instead of if?
+A number might need to be swapped more than once.
+Example: [3, 1, 2]
+3 → swap to index 2: [2, 1, 3]
+2 → swap to index 1: [1, 2, 3]
+
+Using if would only handle one move per index.
+while ensures numbers are moved into place until they’re in the correct spot or can't be moved.
+
+while (
+    nums[i] >= 1 &&                 // only care about positive numbers
+    nums[i] <= nums.length &&       // ignore numbers larger than n
+    nums[nums[i] - 1] != nums[i] && // avoid infinite swapping on duplicates
+    nums[i] != i + 1                // skip if already in the correct spot
+)
+Each condition ensures: that u only try to move values that matter or you don’t overwrite or endlessly swap the same values
+
+Just go through the array and at each index i, if nums[i] != i + 1, then i + 1 is the missing number. if all are correct, return n + 1
