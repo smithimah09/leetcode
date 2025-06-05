@@ -1,0 +1,3 @@
+At first, I thought the pattern was just every (n+1) or (n-1) characters going into each row based on the index, but that didn’t really work. What helped me get it was thinking of it like drawing a zigzag with a pen. I just go down the rows one by one, and when I hit the bottom, I start going back up, then repeat. So instead of doing math to figure out where each letter goes, I just keep track of which row I’m on and whether I’m moving up or down. That’s why the code uses a direction variable to bounce between rows. Once all the letters are in the right rows, I just read them row by row to get the final string.
+
+LOOK FOR PATTERNS IN THE DIAGRAM THEY GIVE YOU!!
